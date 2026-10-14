@@ -50,3 +50,29 @@ mostrarComidas(comidas)
 event.target.reset()
 })  
 
+const filtroCategoria=document.getElementById("filtroCategoria")
+const filtroProvincia=document.getElementById("filtroProvincia")
+const busqueda=document.getElementById("busqueda")
+
+function filtrar(){
+  let comidasFiltradas = comidas.filter(comida=>{
+    return comida.categoria.includes(filtroCategoria.value)
+        && comida.provincia.includes(filtroProvincia.value)
+  })
+  mostrarComidas(comidasFiltradas)
+}
+
+function buscar(){
+  let comidasFiltradas= comidas.filter(comida=>{
+    return comida.nombre.toLowerCase().includes(busqueda.value.toLowerCase())
+        || comida.provincia.toLowerCase().includes(busqueda.value.toLowerCase() )
+        || comida.categoria.toLowerCase().includes(busqueda.value.toLowerCase() )
+   })
+   mostrarComidas(comidasFiltradas)
+}
+
+filtroCategoria.addEventListener("change",filtrar)
+filtroProvincia.addEventListener("change",filtrar)
+busqueda.addEventListener("input", buscar)
+
+
