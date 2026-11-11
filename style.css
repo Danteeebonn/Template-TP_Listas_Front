@@ -1,10 +1,62 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-    padding: 0px;
-}
-
-.comida-container {
-
-
-}
+    padding: 0;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .comida-container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .card {
+    width: 100%;
+    min-height: 10rem;
+    background-color: rgb(29, 196, 118);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .card h2 {
+    font-family: Inter;
+  }
+  .card ul{
+    list-style: none;
+  }
+  
+  .addFood {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: left;
+    gap: 8px;
+    width: 100%;
+    padding: 1rem;
+  }
